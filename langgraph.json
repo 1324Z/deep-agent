@@ -1,0 +1,13 @@
+{
+  "dependencies": [
+    "./"
+  ],
+  "env": ".env",
+  "http": {
+    "app": "./webapp.py:app"
+  },
+  "graphs": {
+    "liuliumei_workflow": "./graph.py:make_graph"
+  },
+  "python_version": "3.12"
+}

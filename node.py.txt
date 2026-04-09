@@ -1,0 +1,72 @@
+graph = StateGraph(LiuliumeiState)
+graph.add_node("init_state_nodes", init_state_nodes)
+graph.add_node("init_agent_nodes_message", init_agent_nodes_message)
+graph.add_node("planner_node", planner_node)
+graph.add_node("planner_interrupt",planner_interrupt_node)
+# graph.add_node("supervisor_node", supervisor_node)
+graph.add_node("user_query_analysis",user_query_analysis)
+graph.add_node("analysis_interrupt", analysis_interrupt_node)
+# graph.add_node("cycle_input",cycle_input)
+graph.add_node("supervisor_node", supervisor_node)
+# 添加所有智能体节点
+for agent in agents:
+    graph.add_node(agent.name, agent.invoke)
+
+# 添加数字人智能体
+# graph.add_node("digit_market",market_knowledge_node)
+# graph.add_node("digit_dev",dev_knowledge_node)
+# graph.add_node("digit_product",product_knowledge_node)
+
+# 添加人工介入拆分节点
+graph.add_node("human_input_title", human_input_title.invoke)
+
+# 定义边
+graph.add_edge(START, "init_state_nodes")
+graph.add_edge("init_state_nodes", "init_agent_nodes_message")
+graph.add_edge("init_agent_nodes_message", "user_query_analysis")
+# graph.add_edge("user_query_analysis", "planner_node")
+graph.add_edge("user_query_analysis", "analysis_interrupt")
+graph.add_edge("analysis_interrupt", "planner_node")
+graph.add_edge("planner_node", "planner_interrupt")
+graph.add_edge("planner_interrupt", "supervisor_node")
+graph.add_conditional_edges(
+    "supervisor_node",
+    lambda state: state.get("next_agent", "end"),
+    {
+        "market_agent":"market_agent",
+        "dev_agent":"dev_agent",
+        "product_agent":"product_agent",
+        # "digit_market":"digit_market",
+        # "digit_dev":"digit_dev",
+        # "digit_product":"digit_product",
+        "summary_agent":"summary_agent",
+        "human_input_agent":"human_input_title",
+        "end":END
+    }
+)
+cycle_agents = [
+    "market_agent", "dev_agent", "product_agent",
+    # "digit_market", "digit_dev", "digit_product",
+    "summary_agent"
+]
+for agent in cycle_agents:
+    graph.add_edge(agent, "supervisor_node")
+
+# 所有智能体执行完后回到监督者节点
+# for agent in agents:
+#     if agent is not human_input_agent:
+#         graph.add_edge(agent.name, "supervisor_node")
+    
+# graph.add_edge("digit_market", "supervisor_node")
+# graph.add_edge("digit_dev", "supervisor_node")
+# graph.add_edge("digit_product", "supervisor_node")
+
+graph.add_edge("human_input_title", "human_input_agent")
+graph.add_conditional_edges(
+    "human_input_agent",
+    lambda state: "supervisor_node" if state.get("terminal") else "user_query_analysis",
+    {
+        "supervisor_node": "supervisor_node",
+        "user_query_analysis": "user_query_analysis",
+    },
+)

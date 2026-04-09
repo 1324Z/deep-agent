@@ -1,0 +1,84 @@
+INFO:langgraph_api.cli:
+
+        Welcome to
+
+¨j  ©°©¤©´©°©´©°©°©¤©´¨X¨T¨[©Ð©¤©´©°©¤©´©°©¤©´©Ð ©Ð
+¨U  ©À©¤©È©¦©¦©¦©¦ ©Ð¨U ¨j©À©Ð©¼©À©¤©È©À©¤©¼©À©¤©È
+¨m¨T¨a©Ø ©Ø©¼©¸©¼©¸©¤©¼¨^¨T¨a©Ø©¸©¤©Ø ©Ø©Ø  ©Ø ©Ø
+
+- \U0001f680 API: [36mhttp://127.0.0.1:2024[0m
+- \U0001f3a8 Studio UI: [36mhttps://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024[0m
+- \U0001f4da API Docs: [36mhttp://127.0.0.1:2024/docs[0m
+
+This in-memory server is designed for development and testing.
+For production use, please use LangSmith Deployment.
+
+
+Server started in 6.02s
+\U0001f3a8 Opening Studio in your browser...
+--- Logging error ---
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\agent\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "D:\Anaconda3\envs\agent\Lib\site-packages\colorama\ansitowin32.py", line 47, in write
+    self.__convertor.write(text)
+  File "D:\Anaconda3\envs\agent\Lib\site-packages\colorama\ansitowin32.py", line 177, in write
+    self.write_and_convert(text)
+  File "D:\Anaconda3\envs\agent\Lib\site-packages\colorama\ansitowin32.py", line 202, in write_and_convert
+    self.write_plain_text(text, cursor, start)
+  File "D:\Anaconda3\envs\agent\Lib\site-packages\colorama\ansitowin32.py", line 210, in write_plain_text
+    self.wrapped.write(text[start:end])
+UnicodeEncodeError: 'gbk' codec can't encode character '\U0001f3a8' in position 0: illegal multibyte sequence
+Call stack:
+  File "D:\Anaconda3\envs\agent\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+  File "D:\Anaconda3\envs\agent\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "D:\Anaconda3\envs\agent\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\Anaconda3\envs\agent\Lib\site-packages\langgraph_api\cli.py", line 263, in _open_browser
+    thread_logger.info(
+Message: '\U0001f3a8 Opening Studio in your browser...'
+Arguments: ()
+URL: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024&organizationId=6d8122ef-6b7d-43ad-aec4-e01af3a90b0a
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\agent\Lib\site-packages\blockbuster\blockbuster.py", line 78, in wrapper
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\agent\Lib\shutil.py", line 847, in move
+    os.rename(src, real_dst)
+  File "D:\Anaconda3\envs\agent\Lib\site-packages\blockbuster\blockbuster.py", line 80, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 32] ÁíÒ»¸ö³ÌÐòÕýÔÚÊ¹ÓÃ´ËÎÄ¼þ£¬½ø³ÌÎÞ·¨·ÃÎÊ¡£: '.langgraph_api\\.langgraph_checkpoint.1.pckl.tmp' -> '.langgraph_api\\.langgraph_checkpoint.1.pckl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\agent\Lib\site-packages\blockbuster\blockbuster.py", line 78, in wrapper
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\envs\agent\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "D:\Anaconda3\envs\agent\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\Anaconda3\envs\agent\Lib\site-packages\langgraph_runtime_inmem\_persistence.py", line 57, in _flush_loop
+    store.sync()
+  File "D:\Anaconda3\envs\agent\Lib\site-packages\langgraph\checkpoint\memory\__init__.py", line 569, in sync
+    shutil.move(tempname, self.filename)  # atomic commit
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda3\envs\agent\Lib\shutil.py", line 868, in move
+    os.unlink(src)
+  File "D:\Anaconda3\envs\agent\Lib\site-packages\blockbuster\blockbuster.py", line 80, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 32] ÁíÒ»¸ö³ÌÐòÕýÔÚÊ¹ÓÃ´ËÎÄ¼þ£¬½ø³ÌÎÞ·¨·ÃÎÊ¡£: '.langgraph_api\\.langgraph_checkpoint.1.pckl.tmp'

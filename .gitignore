@@ -1,0 +1,19 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local runtime artifacts
+.langgraph_api/
+.runlogs/
+*.log
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+frontend/build-output.log
+frontend/tsconfig.tsbuildinfo

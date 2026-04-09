@@ -1,0 +1,15 @@
+
+> liuliumei-agent-bff@0.1.0 dev
+> node --watch src/index.js
+
+BFF server running at http://127.0.0.1:3001
+Proxying LangGraph server: http://127.0.0.1:2024
+Assistant graph id: liuliumei_workflow
+Restarting 'src/index.js'
+BFF server running at http://127.0.0.1:3001
+Proxying LangGraph server: http://127.0.0.1:2024
+Assistant graph id: liuliumei_workflow
+Restarting 'src/index.js'
+BFF server running at http://127.0.0.1:3001
+Proxying LangGraph server: http://127.0.0.1:2024
+Assistant graph id: liuliumei_workflow

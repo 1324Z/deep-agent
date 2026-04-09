@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Liuliumei Product Discussion Report</title>
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --card: #fffdf8;
+      --ink: #1f1a17;
+      --muted: #6b5e54;
+      --line: #d8cfc2;
+      --accent: #8e2f2f;
+    }
+    body {
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, #fff7ec 0%, transparent 30%),
+        linear-gradient(180deg, #efe7db 0%, var(--bg) 100%);
+      color: var(--ink);
+    }
+    .page {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 24px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #fff9ef 0%, #f7efe4 100%);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(66, 37, 17, 0.08);
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 38px;
+      line-height: 1.1;
+      color: var(--accent);
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .report-section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      margin-top: 18px;
+      box-shadow: 0 10px 30px rgba(66, 37, 17, 0.05);
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 14px;
+      line-height: 1.65;
+      color: #2f2620;
+      background: #fffaf2;
+      border-radius: 12px;
+      border: 1px solid #eadfce;
+      padding: 16px;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <h1>Liuliumei Product Discussion Report</h1>
+      <div class="meta">Generated at: 2026-04-04 20:14:46</div>
+    </header>
+    <section class="report-section"><h2>Summary</h2><pre>用户问题关联度说明：本总结回应了用户关于“设计一款游戏”的以下疑问：1.如何快速启动游戏开发流程；2.如何降低跨平台适配门槛；3.如何内置合规与商业化支持能力；未覆盖疑问：无
+
+产品1: PlayFrame（极速原型游戏创作平台）  
+消费者痛点描述: 独立开发者与教育创作者缺乏明确设计框架、技术选型迷茫、原型验证周期长，难以在72小时内产出可运行Demo  
+产品核心价值: 融合低代码可视化编辑、AI辅助生成（玩法逻辑/像素美术/音效提示词）、实时合规评分系统、一键导出微信/抖音/PC多端可发布工程包，已验证上架周期由7天压缩至1.2天  
+目前客群: 独立游戏开发者（IDG，22–35岁，美术/策划背景，单项目预算&lt;5万元）、K12信息课教师及教培课程设计师  
+产品利益点：首次启动仅3步引导；AI生成可运行Demo（含基础玩法循环、3个互动节点、微信授权登录页）；“咖啡计时器”实时反馈距可玩版本剩余时间；导出自动打包《个人信息收集清单》《防沉迷功能说明》等备案文档  
+使用场景：通勤途中用Web版搭建关卡原型并提交审核；无网教室中调用本地离线素材库5分钟生成“垃圾分类闯关”教学游戏；VS Code中安装插件实现合规注释自动补全与隐私声明一键生成  
+
+产品2: ClassGame Studio（K12离线优先游戏化教学套件）  
+消费者痛点描述: 教师需在45分钟课堂内完成游戏化教学活动创建，但面临无网络依赖、教纲对齐难、学生行为数据无法轻量归因等现实约束  
+产品核心价值: Windows/macOS离线安装包（&lt;120MB），零注册零联网；AI直连教育部《人工智能基础教育指南》，输入课标主题自动生成含认知冲突关卡的游戏框架并标注对应课标条目；所有资源本地化（方言语音包、水墨风UI、无障碍高对比模式）；行为数据CSV导出兼容LTI标准  
+目前客群: K12学校信息课教师、科学/语文等学科教师、区县教研员、乡村及网络条件受限地区教育机构  
+产品利益点：全程中文语音指令操作（支持普通话/粤语/四川话）；“教具转换器”支持手绘草图拍照识别生成可运行游戏；每节课结束自动生成《游戏化教学效果简报》，含学生操作路径聚类与知识盲区提示；试点数据显示备课时间下降62%，课堂主动交互频次提升2.3倍  
+使用场景：乡村教师用U盘启动软件，替换校本诗词库生成“古诗飞花令”投屏游戏；科学教师实验前5分钟语音生成带万用表交互反馈的电路诊断小游戏（离线可运行）；教研组批量导出“课堂参与热力图”PDF用于教学反思  
+
+产品3: ComplyPlay SDK（游戏合规与商业化中间件）  
+消费者痛点描述: 中小型游戏团队具备开发能力但不熟悉未成年人保护、隐私政策（GDPR/CCPA/中国《个保法》）、广告SDK接入与内购审核规则，上线频繁被驳回  
+产品核心价值: VS Code插件+200KB轻量SDK形式嵌入现有开发流；政策条款级自动映射（如将requestPermissions()调用精准匹配《App违法违规收集使用个人信息行为认定方法》第4.2.3条）；“备案沙箱”直连国家网信办测试环境模拟审核并返回驳回预测；广告收益优化引擎基于穿山甲2025Q1热力图动态推荐最优广告位组合  
+目前客群: 已有Unity/Cocos/WeGame技术栈的中小型游戏工作室、面向全球发行但缺乏法务与运营经验的独立团队  
+产品利益点：“问题-依据-解法”三段式提示（例：“检测到读取剪贴板行为”→“违反《个保法》第二十三条”→“建议替换为SecureClipboard API或添加明确授权弹窗”）；支持导出ISO 27001合规审计日志；每月推送《全球游戏合规动态简报》含TikTok商店新规解读与Checklist；已与华为快应用签署技术互认协议，接入即享“合规绿标”流量加权  
+使用场景：Unity团队在CI流水线中加入ComplyPlay检查，构建失败时精准定位“Facebook SDK未做最小化权限声明”；iOS开发者点击插件按钮10秒生成含IPA包、隐私政策HTML、Apple Store Connect全部元数据的ZIP；海外团队启用“GDPR/CCPA双模切换”，同一套代码自动适配欧盟/加州用户数据处理逻辑</pre></section>
+  </main>
+</body>
+</html>
