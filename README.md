@@ -37,6 +37,8 @@ npm run dev
 
 
 前端页面：
-![alt text](image.png)
-智能体页面：
-![alt text](image-1.png)
+<img width="3183" height="1704" alt="image" src="https://github.com/user-attachments/assets/58b3eb20-0df7-4b48-9a0c-fae4e8961ec6" />
+
+智能体工作流页面：
+<img width="1107" height="863" alt="image" src="https://github.com/user-attachments/assets/45e025ca-99e5-46eb-8379-c539fcacbefa" />
+
